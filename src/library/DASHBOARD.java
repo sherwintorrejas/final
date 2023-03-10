@@ -8,6 +8,7 @@ package library;
 import java.awt.Color;
 import internalpage.*;
 import internalpage.dashabord;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,10 +51,12 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
+        minimize = new javax.swing.JLabel();
         maindesk = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(231, 133, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,6 +89,9 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         manage.setBackground(new java.awt.Color(231, 133, 0));
         manage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageMouseEntered(evt);
             }
@@ -104,6 +110,9 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         circulation.setBackground(new java.awt.Color(231, 133, 0));
         circulation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                circulationMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 circulationMouseEntered(evt);
             }
@@ -122,6 +131,9 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         VDET.setBackground(new java.awt.Color(231, 133, 0));
         VDET.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VDETMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 VDETMouseEntered(evt);
             }
@@ -140,6 +152,9 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         DEFLIST.setBackground(new java.awt.Color(231, 133, 0));
         DEFLIST.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DEFLISTMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 DEFLISTMouseEntered(evt);
             }
@@ -158,6 +173,9 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         LOGOUT.setBackground(new java.awt.Color(231, 133, 0));
         LOGOUT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LOGOUTMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LOGOUTMouseEntered(evt);
             }
@@ -174,18 +192,23 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(LOGOUT, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 150, -1));
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 497));
+
         jPanel2.setBackground(new java.awt.Color(227, 167, 114));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Welcome, Administrator");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 150, 40));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (4).png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 50, 40));
 
         exit.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        exit.setText("X");
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close (2).png"))); // NOI18N
         exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitMouseClicked(evt);
@@ -197,27 +220,18 @@ public class DASHBOARD extends javax.swing.JFrame {
                 exitMouseExited(evt);
             }
         });
+        jPanel2.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 50, 40));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(520, 520, 520)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(20, 20, 20)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/minimize-sign (2).png"))); // NOI18N
+        minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeMouseClicked(evt);
+            }
+        });
+        jPanel2.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 40, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         javax.swing.GroupLayout maindeskLayout = new javax.swing.GroupLayout(maindesk);
         maindesk.setLayout(maindeskLayout);
@@ -227,31 +241,10 @@ public class DASHBOARD extends javax.swing.JFrame {
         );
         maindeskLayout.setVerticalGroup(
             maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(maindesk)))
-                .addGap(0, 0, 0))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(maindesk))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
-        );
+        getContentPane().add(maindesk, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 37, 630, 460));
 
         pack();
         setLocationRelativeTo(null);
@@ -326,6 +319,38 @@ System.exit(0);
      maindesk.add(dh).setVisible(true);
     }//GEN-LAST:event_dashboardMouseClicked
 
+    private void manageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageMouseClicked
+       manage mng = new manage();
+       maindesk.add(mng).setVisible(true);
+    }//GEN-LAST:event_manageMouseClicked
+
+    private void circulationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_circulationMouseClicked
+       ciculation cic = new ciculation();
+       maindesk.add(cic).setVisible(true);
+    }//GEN-LAST:event_circulationMouseClicked
+
+    private void VDETMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VDETMouseClicked
+       viewdet vd = new viewdet();
+       maindesk.add(vd).setVisible(true);
+    }//GEN-LAST:event_VDETMouseClicked
+
+    private void DEFLISTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DEFLISTMouseClicked
+        vailationlist vl =new vailationlist();
+        maindesk.add(vl).setVisible(true);
+    }//GEN-LAST:event_DEFLISTMouseClicked
+
+    private void LOGOUTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUTMouseClicked
+  int a = JOptionPane.showConfirmDialog(null,"ARE YOU SURE YOU WANT TO LOGOUT?");
+        if(a == JOptionPane.YES_OPTION){
+        login in = new login ();
+              in.setVisible(true);
+              this.dispose();}
+    }//GEN-LAST:event_LOGOUTMouseClicked
+
+    private void minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseClicked
+        setState(ICONIFIED);
+    }//GEN-LAST:event_minimizeMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -380,5 +405,6 @@ System.exit(0);
     private javax.swing.JPanel jPanel2;
     private javax.swing.JDesktopPane maindesk;
     private javax.swing.JPanel manage;
+    private javax.swing.JLabel minimize;
     // End of variables declaration//GEN-END:variables
 }

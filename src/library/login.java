@@ -43,22 +43,27 @@ public class login extends javax.swing.JFrame {
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/lock (3).png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 40, 40));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 40, 40));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/user (3).png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 40, 40));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 40, 40));
 
         UN.setBackground(new java.awt.Color(230, 126, 34));
         UN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         UN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         UN.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "USERNAME", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
-        jPanel1.add(UN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, 40));
+        jPanel1.add(UN, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 210, 40));
 
         PD.setBackground(new java.awt.Color(230, 126, 34));
         PD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         PD.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
-        jPanel1.add(PD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, 40));
+        PD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(PD, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 210, 40));
 
         Lin.setBackground(new java.awt.Color(220, 118, 51));
         Lin.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -116,10 +121,27 @@ this. dispose();
     }//GEN-LAST:event_supActionPerformed
 
     private void LinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinActionPerformed
-       DASHBOARD dsh= new DASHBOARD(); 
+    
+
+  String user = UN.getText();
+        String pass = PD.getText();
+        if(user.isEmpty()|| user.equals("") || pass.isEmpty() || pass.equals("")){
+            UN.setText("Username");
+            PD.setText("Password");
+            PD.setEchoChar((char)0);
+        }else{
+            DASHBOARD dsh= new DASHBOARD(); 
 dsh.setVisible(true);
-this. dispose();
+           
+            this.setVisible(false);
+            this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
+            this.dispose();
+        }
     }//GEN-LAST:event_LinActionPerformed
+
+    private void PDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PDActionPerformed
 
     /**
      * @param args the command line arguments
