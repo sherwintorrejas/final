@@ -6,6 +6,8 @@
 package internalpage;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import library.issuebk;
+import library.returnbk;
 
 /**
  *
@@ -45,9 +47,19 @@ public class ciculation extends javax.swing.JInternalFrame {
 
         BORROWBOOK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BORROWBOOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/book (4).png"))); // NOI18N
+        BORROWBOOK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BORROWBOOKMouseClicked(evt);
+            }
+        });
         jPanel1.add(BORROWBOOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 130, 140));
 
         borrowbook.setText("ISSUE BOOK");
+        borrowbook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrowbookActionPerformed(evt);
+            }
+        });
         jPanel1.add(borrowbook, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 130, 30));
 
         returnbook.setText("RETURN BOOK");
@@ -60,6 +72,11 @@ public class ciculation extends javax.swing.JInternalFrame {
 
         RETURNBOOK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RETURNBOOK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/return (2).png"))); // NOI18N
+        RETURNBOOK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RETURNBOOKMouseClicked(evt);
+            }
+        });
         jPanel1.add(RETURNBOOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 130, 140));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/managing-remote-employees-630x450-c.jpg"))); // NOI18N
@@ -71,8 +88,28 @@ public class ciculation extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returnbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbookActionPerformed
-        // TODO add your handling code here:
+         returnbk rbk = new returnbk();
+        rbk.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_returnbookActionPerformed
+
+    private void BORROWBOOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BORROWBOOKMouseClicked
+        issuebk ibk = new issuebk();
+        ibk.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BORROWBOOKMouseClicked
+
+    private void borrowbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrowbookActionPerformed
+         issuebk ibk = new issuebk();
+        ibk.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_borrowbookActionPerformed
+
+    private void RETURNBOOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RETURNBOOKMouseClicked
+        returnbk rbk = new returnbk();
+        rbk.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_RETURNBOOKMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

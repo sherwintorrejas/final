@@ -5,6 +5,10 @@
  */
 package library;
 
+import internalpage.manage;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author User
@@ -27,22 +31,188 @@ public class addstudent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        ID = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        STUDENT = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        EN = new javax.swing.JTextField();
+        ELN = new javax.swing.JTextField();
+        EC = new javax.swing.JTextField();
+        ECT = new javax.swing.JTextField();
+        EY = new javax.swing.JTextField();
+        DELETE = new javax.swing.JButton();
+        UPDATE = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 651, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 414, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(810, 520));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ID.setBackground(new java.awt.Color(241, 195, 4));
+        ID.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ID.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER ID", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        getContentPane().add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 210, 40));
+
+        STUDENT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "NAME", "LASTNAME", "COURSE", "YEAR", "CONTACT#"
+            }
+        ));
+        jScrollPane1.setViewportView(STUDENT);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 500, 340));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(241, 195, 4));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add-friend.png"))); // NOI18N
+        jLabel2.setText("ADD STUDENT");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 280, 40));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close (2).png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, 40, 40));
+
+        EN.setBackground(new java.awt.Color(241, 195, 4));
+        EN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EN.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER NAME", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        EN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ENActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 210, 40));
+
+        ELN.setBackground(new java.awt.Color(241, 195, 4));
+        ELN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ELN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ELN.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER LASTNAME", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        getContentPane().add(ELN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 210, 40));
+
+        EC.setBackground(new java.awt.Color(241, 195, 4));
+        EC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EC.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER COURSE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        getContentPane().add(EC, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 210, 40));
+
+        ECT.setBackground(new java.awt.Color(241, 195, 4));
+        ECT.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ECT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ECT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER CONTACT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        getContentPane().add(ECT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 210, 40));
+
+        EY.setBackground(new java.awt.Color(241, 195, 4));
+        EY.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EY.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EY.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER YEAR", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        getContentPane().add(EY, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 210, 40));
+
+        DELETE.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        DELETE.setText("DELETE");
+        DELETE.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        DELETE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DELETEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 80, 30));
+
+        UPDATE.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        UPDATE.setText("UPDATE");
+        UPDATE.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        UPDATE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UPDATEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 80, 30));
+
+        ADD.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ADD.setText("ADD");
+        ADD.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        ADD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 80, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/library-books-laptop-table-wallpaper-preview.jpg"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 520));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        manage mg= new manage();
+        mg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void ENActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ENActionPerformed
+
+    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
+        DefaultTableModel model = (DefaultTableModel)STUDENT.getModel();
+        try{
+            int SelectedRowIndex = STUDENT.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null,ex);
+        }
+    }//GEN-LAST:event_DELETEActionPerformed
+
+    private void UPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEActionPerformed
+        DefaultTableModel model = (DefaultTableModel)STUDENT.getModel();
+        int selectedRowIndex = STUDENT.getSelectedRow();
+
+        String name = model.getValueAt(selectedRowIndex,1).toString();
+        String lastname = model.getValueAt(selectedRowIndex,2).toString();
+        String course = model.getValueAt(selectedRowIndex,3).toString();
+        String year = model.getValueAt(selectedRowIndex,4).toString();
+        String contact = model.getValueAt(selectedRowIndex,5).toString();    
+
+        String Newname= JOptionPane.showInputDialog(null,"Enter the new name:",name);
+        String Newlastname= JOptionPane.showInputDialog(null,"Enter the new lastname:",lastname);
+        String Newcours= JOptionPane.showInputDialog(null,"Enter the new course:",course);
+        String Newyear= JOptionPane.showInputDialog(null,"Enter the new year:",year);
+        String Newcontact= JOptionPane.showInputDialog(null,"Enter the new contact:",contact);    
+
+        model.setValueAt(Newname, selectedRowIndex,1);
+        model.setValueAt(Newlastname, selectedRowIndex, 2);
+        model.setValueAt(Newcours, selectedRowIndex, 3);
+        model.setValueAt(Newyear, selectedRowIndex, 4);
+        model.setValueAt(Newcontact, selectedRowIndex, 5); 
+    }//GEN-LAST:event_UPDATEActionPerformed
+
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
+        if(ID.getText().equals("")||EN.getText().equals("")||ELN.getText().equals("")||EC.getText().equals("")||EY.getText().equals("")||ECT.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Please Enter All Data");
+        }else{
+            String data []={ID.getText(),EN.getText(),ELN.getText(),EC.getText(),EY.getText(),ECT.getText()};
+            DefaultTableModel tbl =(DefaultTableModel)STUDENT.getModel();
+            tbl.addRow(data);
+            JOptionPane.showMessageDialog(this, "ADDED");
+
+        }
+    }//GEN-LAST:event_ADDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +250,19 @@ public class addstudent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
+    private javax.swing.JButton DELETE;
+    private javax.swing.JTextField EC;
+    private javax.swing.JTextField ECT;
+    private javax.swing.JTextField ELN;
+    private javax.swing.JTextField EN;
+    private javax.swing.JTextField EY;
+    private javax.swing.JTextField ID;
+    private javax.swing.JTable STUDENT;
+    private javax.swing.JButton UPDATE;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

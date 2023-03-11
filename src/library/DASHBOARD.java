@@ -85,7 +85,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         });
         dashboard.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 20));
 
-        jPanel1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 150, 30));
+        jPanel1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 160, 40));
 
         manage.setBackground(new java.awt.Color(231, 133, 0));
         manage.addMouseListener(new java.awt.event.MouseAdapter() {

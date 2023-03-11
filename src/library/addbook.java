@@ -5,6 +5,10 @@
  */
 package library;
 
+import internalpage.manage;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author User
@@ -27,22 +31,176 @@ public class addbook extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        ED = new javax.swing.JTextField();
+        EBT = new javax.swing.JTextField();
+        EG = new javax.swing.JTextField();
+        EN = new javax.swing.JTextField();
+        DELETE = new javax.swing.JButton();
+        UPDATE = new javax.swing.JButton();
+        ADD = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        BOOK = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 733, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ED.setBackground(new java.awt.Color(241, 195, 4));
+        ED.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ED.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ED.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER EDITION", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        jPanel1.add(ED, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 210, 40));
+
+        EBT.setBackground(new java.awt.Color(241, 195, 4));
+        EBT.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EBT.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER BOOK TITTLE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        EBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EBTActionPerformed(evt);
+            }
+        });
+        jPanel1.add(EBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 210, 40));
+
+        EG.setBackground(new java.awt.Color(241, 195, 4));
+        EG.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EG.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EG.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER GENRE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        jPanel1.add(EG, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 210, 40));
+
+        EN.setBackground(new java.awt.Color(241, 195, 4));
+        EN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        EN.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ENTER ISBN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 12))); // NOI18N
+        jPanel1.add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 210, 40));
+
+        DELETE.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        DELETE.setText("DELETE");
+        DELETE.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        DELETE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DELETEActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 80, 30));
+
+        UPDATE.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        UPDATE.setText("UPDATE");
+        UPDATE.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        UPDATE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UPDATEActionPerformed(evt);
+            }
+        });
+        jPanel1.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 80, 30));
+
+        ADD.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ADD.setText("ADD");
+        ADD.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        ADD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 80, 30));
+
+        BOOK.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ISBN", "TITLE", "GENRE", "EDITION"
+            }
+        ));
+        jScrollPane1.setViewportView(BOOK);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 470, 340));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close (2).png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, 40, 40));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(241, 195, 4));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/add (1).png"))); // NOI18N
+        jLabel2.setText("ADD BOOK");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 280, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/library-books-laptop-table-wallpaper-preview.jpg"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 510));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EBTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EBTActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+         manage mg= new manage();
+      mg.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
+         if(EN.getText().equals("")||EBT.getText().equals("")||EG.getText().equals("")||ED.getText().equals("")){
+   JOptionPane.showMessageDialog(this, "Please Enter All Data");
+    }else{
+    String data []={EN.getText(),EBT.getText(),EG.getText(),ED.getText()};
+    DefaultTableModel tbl =(DefaultTableModel)BOOK.getModel(); 
+    tbl.addRow(data);
+       JOptionPane.showMessageDialog(this, "ADDED");
+
+   }
+    }//GEN-LAST:event_ADDActionPerformed
+
+    private void UPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEActionPerformed
+       DefaultTableModel model = (DefaultTableModel)BOOK.getModel();
+         int selectedRowIndex = BOOK.getSelectedRow();
+         
+        String isbn = model.getValueAt(selectedRowIndex,0).toString();
+        String title = model.getValueAt(selectedRowIndex,1).toString();
+        String genre = model.getValueAt(selectedRowIndex,2).toString();
+        String edition = model.getValueAt(selectedRowIndex,3).toString();
+    
+        String Newisbn= JOptionPane.showInputDialog(null,"Enter the new isbn:",isbn);
+        String Newtitle= JOptionPane.showInputDialog(null,"Enter the new title:",title);
+        String Newgenre= JOptionPane.showInputDialog(null,"Enter the new genre:",genre);
+        String Newedition= JOptionPane.showInputDialog(null,"Enter the new edition:",edition);
+      
+        model.setValueAt(Newisbn, selectedRowIndex,0);
+        model.setValueAt(Newtitle, selectedRowIndex, 1);
+        model.setValueAt(Newgenre, selectedRowIndex, 2);
+        model.setValueAt(Newedition, selectedRowIndex, 3);
+    }//GEN-LAST:event_UPDATEActionPerformed
+
+    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
+        DefaultTableModel model = (DefaultTableModel)BOOK.getModel();
+        try{
+            int SelectedRowIndex = BOOK.getSelectedRow();
+            model.removeRow(SelectedRowIndex);
+        }catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null,ex);
+        }
+
+    }//GEN-LAST:event_DELETEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +238,18 @@ public class addbook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADD;
+    private javax.swing.JTable BOOK;
+    private javax.swing.JButton DELETE;
+    private javax.swing.JTextField EBT;
+    private javax.swing.JTextField ED;
+    private javax.swing.JTextField EG;
+    private javax.swing.JTextField EN;
+    private javax.swing.JButton UPDATE;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

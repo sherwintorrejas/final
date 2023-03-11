@@ -5,6 +5,8 @@
  */
 package library;
 
+import internalpage.ciculation;
+
 /**
  *
  * @author User
@@ -27,21 +29,129 @@ public class returnbk extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        DUEDATE = new javax.swing.JLabel();
+        ISSUEDID = new javax.swing.JLabel();
+        TITLE = new javax.swing.JLabel();
+        STUDNAME = new javax.swing.JLabel();
+        ISSUEDDATE = new javax.swing.JLabel();
+        ISBN = new javax.swing.JTextField();
+        STUDid = new javax.swing.JTextField();
+        RETURNBOOK = new javax.swing.JButton();
+        FINDET = new javax.swing.JButton();
+        EXIT = new javax.swing.JLabel();
+        BG = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/book (6).png"))); // NOI18N
+        jLabel3.setText("RETURN BOOK");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 240, 50));
+
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/open-book (1).png"))); // NOI18N
+        jLabel4.setText("ISSUED BOOK DETAILS");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 240, 50));
+
+        DUEDATE.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "DUE DATE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        getContentPane().add(DUEDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 230, 50));
+
+        ISSUEDID.setBackground(new java.awt.Color(204, 204, 204));
+        ISSUEDID.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ISSUED ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14), new java.awt.Color(0, 0, 255))); // NOI18N
+        getContentPane().add(ISSUEDID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 230, 50));
+
+        TITLE.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "TITLE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        getContentPane().add(TITLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 230, 50));
+
+        STUDNAME.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "NAME", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        getContentPane().add(STUDNAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 230, 50));
+
+        ISSUEDDATE.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "ISSUED DATE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14), new java.awt.Color(0, 0, 204))); // NOI18N
+        getContentPane().add(ISSUEDDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 230, 50));
+
+        ISBN.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "ISBN", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14))); // NOI18N
+        ISBN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ISBNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 270, 40));
+
+        STUDid.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "STUDENT ID", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI", 1, 14))); // NOI18N
+        STUDid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                STUDidActionPerformed(evt);
+            }
+        });
+        getContentPane().add(STUDid, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 270, 40));
+
+        RETURNBOOK.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        RETURNBOOK.setText("RETURN BOOK");
+        RETURNBOOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RETURNBOOKActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RETURNBOOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 250, 30));
+
+        FINDET.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        FINDET.setText("FIND DETAILS");
+        FINDET.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FINDETActionPerformed(evt);
+            }
+        });
+        getContentPane().add(FINDET, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 250, 30));
+
+        EXIT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        EXIT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/close (2).png"))); // NOI18N
+        EXIT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EXITMouseClicked(evt);
+            }
+        });
+        getContentPane().add(EXIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 40, 40));
+
+        BG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/library-books-laptop-table-wallpaper-preview.jpg"))); // NOI18N
+        getContentPane().add(BG, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, -6, 700, 520));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ISBNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ISBNActionPerformed
+
+    private void STUDidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STUDidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_STUDidActionPerformed
+
+    private void FINDETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FINDETActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FINDETActionPerformed
+
+    private void RETURNBOOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RETURNBOOKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RETURNBOOKActionPerformed
+
+    private void EXITMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EXITMouseClicked
+      ciculation cic= new ciculation();
+      cic.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_EXITMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +189,19 @@ public class returnbk extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BG;
+    private javax.swing.JLabel DUEDATE;
+    private javax.swing.JLabel EXIT;
+    private javax.swing.JButton FINDET;
+    private javax.swing.JTextField ISBN;
+    private javax.swing.JLabel ISSUEDDATE;
+    private javax.swing.JLabel ISSUEDID;
+    private javax.swing.JButton RETURNBOOK;
+    private javax.swing.JLabel STUDNAME;
+    private javax.swing.JTextField STUDid;
+    private javax.swing.JLabel TITLE;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
