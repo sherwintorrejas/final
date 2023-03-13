@@ -108,6 +108,7 @@ public class ciculation extends javax.swing.JInternalFrame {
     private void RETURNBOOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RETURNBOOKMouseClicked
         returnbk rbk = new returnbk();
         rbk.setVisible(true);
+  
         this.dispose();
     }//GEN-LAST:event_RETURNBOOKMouseClicked
 

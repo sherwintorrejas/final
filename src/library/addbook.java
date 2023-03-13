@@ -153,7 +153,7 @@ public class addbook extends javax.swing.JFrame {
     }//GEN-LAST:event_EBTActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-         manage mg= new manage();
+      manage mg= new manage();
       mg.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked

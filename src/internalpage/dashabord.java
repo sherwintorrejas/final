@@ -17,7 +17,8 @@ public class dashabord extends javax.swing.JInternalFrame {
      * Creates new form dashabord
      */
     public dashabord() {
-        initComponents(); this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        initComponents(); 
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
         bi.setNorthPane(null);
     }

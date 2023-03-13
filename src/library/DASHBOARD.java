@@ -9,6 +9,7 @@ import java.awt.Color;
 import internalpage.*;
 import internalpage.dashabord;
 import javax.swing.JOptionPane;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -85,7 +86,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         });
         dashboard.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 20));
 
-        jPanel1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 103, 160, 40));
+        jPanel1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 160, 40));
 
         manage.setBackground(new java.awt.Color(231, 133, 0));
         manage.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -317,16 +318,19 @@ System.exit(0);
     private void dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardMouseClicked
       dashabord dh = new dashabord();
      maindesk.add(dh).setVisible(true);
+    
     }//GEN-LAST:event_dashboardMouseClicked
 
     private void manageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageMouseClicked
        manage mng = new manage();
        maindesk.add(mng).setVisible(true);
+           
     }//GEN-LAST:event_manageMouseClicked
 
     private void circulationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_circulationMouseClicked
        ciculation cic = new ciculation();
        maindesk.add(cic).setVisible(true);
+           
     }//GEN-LAST:event_circulationMouseClicked
 
     private void VDETMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VDETMouseClicked
@@ -337,6 +341,7 @@ System.exit(0);
     private void DEFLISTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DEFLISTMouseClicked
         vailationlist vl =new vailationlist();
         maindesk.add(vl).setVisible(true);
+            
     }//GEN-LAST:event_DEFLISTMouseClicked
 
     private void LOGOUTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUTMouseClicked

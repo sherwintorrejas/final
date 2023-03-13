@@ -6,6 +6,7 @@
 package library;
 
 import internalpage.ciculation;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -18,6 +19,7 @@ public class returnbk extends javax.swing.JFrame {
      */
     public returnbk() {
         initComponents();
+        
     }
 
     /**
